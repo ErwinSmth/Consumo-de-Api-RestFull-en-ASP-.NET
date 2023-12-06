@@ -12,15 +12,15 @@ public class rol {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idrol;
+    private Integer idrol;
 
     private String nombre;
 
-    public long getIdrol() {
+    public Integer getIdrol() {
         return idrol;
     }
 
-    public void setIdrol(long idrol) {
+    public void setIdrol(Integer idrol) {
         this.idrol = idrol;
     }
 

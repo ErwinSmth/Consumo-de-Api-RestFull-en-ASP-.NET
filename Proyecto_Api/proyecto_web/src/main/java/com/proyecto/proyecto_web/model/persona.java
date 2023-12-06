@@ -14,7 +14,7 @@ public class persona {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_persona;
+    private Integer id_persona;
 
     private String prim_nomb;
     private String seg_nomb;
@@ -32,11 +32,11 @@ public class persona {
     @JoinColumn(name = "login")
     private usuario login;
 
-    public long getId_persona() {
+    public Integer getId_persona() {
         return id_persona;
     }
 
-    public void setId_persona(long id_persona) {
+    public void setId_persona(Integer id_persona) {
         this.id_persona = id_persona;
     }
 

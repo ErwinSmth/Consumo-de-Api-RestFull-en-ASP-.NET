@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.proyecto.proyecto_web.model.persona;
 
-public interface personaRepository extends JpaRepository <persona, Long> {
+public interface personaRepository extends JpaRepository <persona, Integer> {
     
     @Query("SELECT p FROM persona p JOIN FETCH p.login JOIN FETCH p.nom_TD JOIN FETCH p.login.idrol")
     List<persona> findAllPersonas();
