@@ -1,4 +1,4 @@
-package com.proyecto.proyecto_web.controller;
+package com.proyecto.proyecto_web.Api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +10,13 @@ import com.proyecto.proyecto_web.model.tramite;
 import com.proyecto.proyecto_web.repository.tramiteRepository;
 
 @RestController
-@RequestMapping(path = "/tramite")
-public class tramiteController {
+@RequestMapping(path = "/api/tramite")
+public class tramiteRest {
  
     @Autowired
     private tramiteRepository tramiteRepo;
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/listar")
     public @ResponseBody Iterable<tramite> listarTramite(){
         return tramiteRepo.findAllTramites();
     }

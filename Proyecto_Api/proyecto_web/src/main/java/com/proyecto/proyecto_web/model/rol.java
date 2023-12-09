@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -15,6 +18,13 @@ public class rol {
     private Integer idrol;
 
     private String nombre;
+
+    @ManyToMany
+    @JoinTable(
+        name = "permiso",
+        joinColumns = @JoinColumn(name = "idrol"),
+        inverseJoinColumns = @JoinColumn (name = "id_opcion")
+    )
 
     public Integer getIdrol() {
         return idrol;
@@ -31,7 +41,5 @@ public class rol {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    
 
 }

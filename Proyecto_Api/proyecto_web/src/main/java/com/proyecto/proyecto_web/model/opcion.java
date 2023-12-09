@@ -1,6 +1,9 @@
 package com.proyecto.proyecto_web.model;
 
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,11 +19,16 @@ public class opcion {
 
     private String pagina;
 
-    private String estado;
+    @Enumerated(EnumType.STRING)
+    private Estado estado;
 
     private String descripcion;
 
     private Integer grupo;
+
+    public enum Estado{
+        ACTIVO, INACTIVO
+    }
 
     public Integer getIdOpcion() {
         return idOpcion;
@@ -38,14 +46,6 @@ public class opcion {
         this.pagina = pagina;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -61,7 +61,5 @@ public class opcion {
     public void setGrupo(Integer grupo) {
         this.grupo = grupo;
     }
-
-    
 
 }

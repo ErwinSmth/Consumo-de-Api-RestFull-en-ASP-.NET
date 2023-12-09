@@ -1,4 +1,4 @@
-package com.proyecto.proyecto_web.controller;
+package com.proyecto.proyecto_web.Api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +10,13 @@ import com.proyecto.proyecto_web.model.persona;
 import com.proyecto.proyecto_web.repository.personaRepository;
 
 @RestController
-@RequestMapping(path = "/persona")
-public class personaController {
+@RequestMapping(path = "/api/persona")
+public class personaRest {
     
     @Autowired
     private personaRepository persoRepo;
 
-    @GetMapping(path = "/all")
+    @GetMapping(path = "/listar")
     public @ResponseBody Iterable<persona> listarPersonas(){
         return persoRepo.findAllPersonas();
     }

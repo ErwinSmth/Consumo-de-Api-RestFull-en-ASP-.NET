@@ -12,6 +12,4 @@ public interface personaRepository extends JpaRepository <persona, Integer> {
     @Query("SELECT p FROM persona p JOIN FETCH p.login JOIN FETCH p.nom_TD JOIN FETCH p.login.idrol")
     List<persona> findAllPersonas();
 
-    List<persona> findAll();
-
 }
